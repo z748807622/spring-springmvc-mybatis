@@ -1,0 +1,10 @@
+.show-info{
+	position: absolute;
+	bottom: 0px;
+}
+
+.fade-out{
+	transition: opacity 8s;
+	-webkit-transition: opacity 8s; /* Safari */
+	opacity:0;
+}

@@ -1,0 +1,205 @@
+			*{
+				//border: 1px dotted yellow;
+			}
+			.top{
+				position: fixed;
+				width: 100%;
+				z-index: 10;
+				height: 58px;
+			}
+			.container-fluid{background-color: inherit;}
+			.navbar-collapse{overflow: hidden;}
+			.main{
+				position: relative;
+				top:63px;
+			}
+			.music,.music>div{
+				padding:0;
+				margin: 0;
+			}
+			.container > ul > li{	
+				display: inline-block;
+				text-align:center;
+				list-style: none;
+				overflow: hidden;
+				position: relative;
+			}
+			.gray{
+				background: #f1f1f1;
+			}
+			.page{
+				text-align: center;
+			}
+			.container > ul{
+				display: inline-block;
+				padding: 0;
+				width: 100%;
+			}
+			.login-page{
+				width:100%;
+				height:100%;
+				z-index:10;
+				position:fixed;
+				top: -400px;
+				transition:top 0.5s;
+				display: none;
+			}
+
+			.login-page-show{
+				top:0px;
+			}
+			.login-page > .login-form{
+				background: #f8f8f8;
+				height: 232px;
+				margin-top:110px;
+				box-shadow:3px 5px 17px gray;
+			}
+			.login-click{
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0px;
+				z-index: -1;
+			}
+			.login-page form{
+				position:relative;
+				top: 30px;
+			}
+			.login-page .login-close{
+				float:right;
+				color:red;
+				cursor: pointer;
+			}
+			/** 共有 **/
+			.music{
+				width:50%;
+				height: 160px;
+				margin-top: -6px;
+			}
+			.music > .cover{
+				height: 100px;
+				overflow: hidden;
+			}
+			.music > .cover > .song_img{
+				height: 100%;
+				transition:transform 1s;
+				position: relative;
+			}
+			
+			.cover > .song_img > .play{
+				position: absolute;
+				left:0px;
+				height:100%;
+				width:100%;
+				line-height:100px;
+				color:gray;
+				font-size: 30px;
+				transition:opacity 0.5s;
+				cursor: pointer;
+			}
+			.play_show{
+				opacity:0.8;
+			}
+			.play_hidden{
+				opacity:0;
+			}
+			.cover > .song_img > .play:hover{
+				opacity:0.8;
+			}
+			.cover > .song_img > img{
+				height: inherit;
+			}
+			.cover > .song_img:hover{
+				transform:scale(1.1) translateZ(0);
+			}
+			.music > .singer{
+				color: gray;
+			}
+			
+			/** 共有结束 **/
+			@media screen and (min-width:768px){
+				.music{
+					width:180px;
+					height: 160px;
+				}
+				.main{
+					top:100px;
+				}
+				.login-page > .login-form{
+					height: 251px;
+					box-shadow:3px 5px 17px gray;
+				}
+				.login-page form{
+					top: 67px;
+				}
+				
+			}
+			@media screen and (min-width:992px){
+				.music{
+					width:156px;
+					height: 160px;
+				}
+				.login-page > .login-form{
+					float:none;
+					display:block;
+					margin-left:auto;
+					margin-right:auto;
+					width:750px;
+				}
+			}
+			@media screen and (min-width:1200px){
+				
+				.music{
+					width:142px;
+					height: 160px;
+				}
+			}
+			.loading{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top:-50px;
+				left: 50%;
+				transition:top 0.3s;
+			}
+			.loading_show{
+				top:0px;
+			}
+			@keyframes move {
+			  from { transform: translate(0,50%); }
+			  to { transform: translate(0,850%); }
+			}
+			figure {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 50%;
+			  position: relative;
+			  background: inherit;
+			}
+			section {
+			  width: 10%;
+			  height: 100%;
+			  position: absolute;
+			  left: 45%;
+			}
+			section:nth-child(2) { transform: rotate(22.5deg);  }
+			section:nth-child(3) { transform: rotate(45deg);    }
+			section:nth-child(4) { transform: rotate(67.5deg);  }
+			section:nth-child(5) { transform: rotate(90deg);    }
+			section:nth-child(6) { transform: rotate(112.5deg); }
+			section:nth-child(7) { transform: rotate(135deg);   }
+			section:nth-child(8) { transform: rotate(157.5deg); }
+			figure div {
+			  height: 10%;
+			  border-radius: 50%;
+			  background: #242020;
+			  animation: move 1s ease-in-out infinite alternate;
+			}
+			figure:nth-child(1) > section:nth-child(1) > div { animation-delay: -0.1875s; }
+			figure:nth-child(1) > section:nth-child(2) > div { animation-delay: -0.175s;  }
+			figure:nth-child(1) > section:nth-child(3) > div { animation-delay: -0.1625s; }
+			figure:nth-child(1) > section:nth-child(4) > div { animation-delay: -0.15s;   }
+			figure:nth-child(1) > section:nth-child(5) > div { animation-delay: -0.9375s; }
+			figure:nth-child(1) > section:nth-child(6) > div { animation-delay: -0.925s;  }
+			figure:nth-child(1) > section:nth-child(7) > div { animation-delay: -0.9125s; }
+			figure:nth-child(1) > section:nth-child(8) > div { animation-delay: -0.9s;    }

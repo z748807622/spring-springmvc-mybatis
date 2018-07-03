@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>blobfish</title>
+		<meta charset="utf-8">
+		<meta name="description" content="blobfish，张劲宇，张劲宇个人网站" />
+		<meta name="keyword" content="blobfish,music,springmvc,ssh,个人学习，张劲宇">
+		<meta name="referrer" content="never">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery/jQuery.md5.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/my/showinfo.js"></script>
+		<link rel="stylesheet" href="css/my.css">
+		<style type="text/css">
+			.panel-right{
+				position: fixed;
+				z-index:10;
+				top:60px;
+				right:0px;
+				height: 100%;
+			}
+			.panel-right > .panel{
+				width: 450px;
+				height: 100%;
+				background: red;
+			}
+			.panel-right > .control{
+				height: 100%;
+				width: 20px;
+				background: gray;
+			}
+			#login-success{
+				display: none;
+			}
+			.collect{
+				position:absolute;
+				left:0;
+				font-size:18px;
+				cursor: pointer;
+				z-index: 5;
+				color: #bfb2b2;
+			}
+			.hadcollect{
+				color: red;
+			}
+			.collect:hover{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="top navbar navbar-default" role="navigation">
+			<div class="loading">
+				  <figure>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					  <section><div></div></section>
+					</figure>
+			</div>
+		    <div class="container-fluid">
+			    <div class="navbar-header">
+			        <button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#example-navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<div style="position:fixed;top:0;left:0;opacity:0;width:100%; height: 100%;background: inherit;"></div>
+					</button>
+					<a class="navbar-brand" href="#">blobfish</a>
+			    </div>
+			   
+			    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+			        <ul class="nav navbar-nav">
+			        	<li class="dropdown" >
+			        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">推荐<b class="caret"></b></a>
+			        		 <ul class="dropdown-menu tuijian">
+
+			                    <li class="divider"></li>
+			                </ul>
+			        	</li>
+			        	<li class="shoucang"><a class="my_music" href="#" class="shoucang">我的收藏</a></li>
+			            <li class="navbar-right">
+							 <form class="search_m navbar-form" role="search">
+						        <div class="form-group">
+						            <input id="search_name" type="text" name="search" class="form-control" placeholder="输入">
+						        </div>
+						        <button class="submit btn btn-default" type="submit">查找</button>
+						    </form>
+						</li>
+						 <li class="navbar-text navbar-right" id="login-success">
+							<span class="glyphicon glyphicon-user"></span>
+							<span class="username"></span>
+							<span class="logout"><a href="javascript:;">退出登陆</a></span>
+						</li>
+			        </ul>
+			        <ul class="nav navbar-nav navbar-right login-operete">
+			        	<li class="">
+			        		<a class="login" href="javascript:;">
+			        			<span class="glyphicon glyphicon-user"></span>登陆
+			        		</a>
+			        	</li>
+			        	<li class="">
+			        		<a href="#">
+			        			注册
+			        		</a>
+			        	</li>
+			        </ul>
+	    		</div>
+	    		<div class="collapse navbar-collapse" id="example-navbar-collapse"></div>
+		    </div>
+		</nav>
+		<div class="container main">
+			<ul id="music">			
+			<!-- 	<li class="music white">
+					<span class="glyphicon glyphicon-heart collect notcollect"></span>
+					<div class="cover" date_src="CC8B1356401E346509FAC175F81AEB54">
+						<div class="song_img">
+							<img class="img-circle" alt="洛天依 - 盼君归" src="http://singerimg.kugou.com/uploadpic/softhead/400/20160722/20160722185354390495.jpg">
+							<span class="play_hidden play glyphicon glyphicon-play"></span>
+						</div>
+					</div>
+					<div class="singer">洛天依</div>
+					<div class="song">洛天依 - 盼君归</div>
+				</li> -->
+			</ul>
+		<div class="page">
+			<ul class="pagination" date_url="music/recommendation/2?">
+				<li class="pre"><a href="javascript:;">&laquo;</a></li>
+				<li class="active"><a class="page_index" href="#">1</a></li>
+				<li><a class="page_index" href="javascript:;">2</a></li>
+				<li><a class="page_index" href="javascript:;">3</a></li>
+				<li><a class="page_index" href="javascript:;">4</a></li>
+				<li><a class="page_index" href="javascript:;">5</a></li>
+				<li class="next"><a href="javascript:;">&raquo;</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="login-page col-sm-12" style="z-index: 10;">
+			<div class="login-click"></div>
+			<div class="col-sm-10 col-sm-offset-1 login-form" style="padding:0;">
+				<span class="login-close glyphicon glyphicon-remove-circle"></span>
+				<form class="login_form form-horizontal" role="form">
+				<div class="username form-group">
+					<label class="col-sm-2 control-label">用户名：</label>
+					<div class="col-sm-9">
+						<input class="input_name form-control" type="text" name="username">
+					</div>
+				</div>
+				<div class="passwd form-group">
+					<label class="col-sm-2 control-label">密&nbsp;&nbsp;码：</label>
+					<div class="col-sm-9">
+						<input class="input_passwd form-control" type="password" autocomplete="new-password" name="passwd">
+					</div>
+				</div>
+				<div class="form-group text-center">
+					<input class="post btn btn-primary col-sm-4 col-sm-offset-4" type="submit" value="登录">
+				</div>
+			</form>
+			</div>
+		</div>
+		<audio id="audio" src="" autoplay="autoplay" loop="loop"></audio>  
+		<div class="show-info col-sm-4"></div>
+		<!-- <div class="panel-right">
+			<div class="control"></div>
+			<div class="panel"></div>
+		</div> -->
+	</body>
+	<script type="text/javascript" src="js/my/index.js"></script>
+	<script type="text/javascript" src="js/my/login.js"></script>
+	<script type="text/javascript">
+		$(".panel > .control").click(function(){
+			
+		});
+		$.ajax({"url":"recommendation","success":function(res){
+			showLoading();
+			var str = "<li><a class='tuijian_item' href='#' url-date='music/recommendation/{url}?'>{value}</a></li>";
+			for(var i=0; i<res.data.length; i++){
+				$(".tuijian").html($(".tuijian").html()+str.replace("{url}",res.data[i].id).replace("{value}",res.data[i].name));
+			}
+			$(".tuijian").html($(".tuijian").html()+'<li class="divider"></li>');
+			$(".tuijian_item").click(function(){
+				$(".page ul").attr("date_url",$(this).attr("url-date"));
+				music.page = 1;
+				getTop500(1,$(".page ul").attr("date_url"));
+				$(".shoucang").removeClass("active");
+			})
+			hideLoading();
+		}});
+		$(".logout").click(function(){
+			showLoading();
+			//console.log("123");
+			netGet("login/out", function(res,that){
+				$(".login-operete").show();
+				$("#login-success").hide();
+				getTop500(1,"music/recommendation/2?");
+				$(this).removeClass("active");
+				hideLoading();
+			}, this);
+		});
+	</script>
+</html>
