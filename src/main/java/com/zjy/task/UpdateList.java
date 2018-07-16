@@ -14,13 +14,11 @@ public class UpdateList {
 	Logger logger = LoggerFactory.getLogger(UpdateList.class);
 	@Autowired
 	UpdateRecommendationMusicService updateTop500MusicService;
-	public int i = 0;
 	//@Scheduled(cron = "0 0 1 * * ?")
 	@Scheduled(cron = "0 0 9 * * ?")
 	public void updateTop500(){
 		logger.info("推荐列表更新任务开始执行");
 		//updateTop500MusicService.updateTop500();
 		logger.info("推荐列表更新任务执行完成");
-		//System.out.println(i++);
 	}
 }
